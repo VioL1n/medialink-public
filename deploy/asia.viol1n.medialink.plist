@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Example only: generate your real user LaunchAgent with scripts/start.sh. -->
+<plist version="1.0">
+<dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PYTHONUNBUFFERED</key>
+		<string>1</string>
+		<key>USER</key>
+		<string>YOUR_USERNAME</string>
+	</dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>asia.viol1n.medialink</string>
+	<key>ProcessType</key>
+	<string>Standard</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/zsh</string>
+		<string>/Users/YOUR_USERNAME/Applications/medialink/scripts/run.sh</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>SoftResourceLimits</key>
+	<dict>
+		<key>NumberOfFiles</key>
+		<integer>8192</integer>
+	</dict>
+	<key>StandardErrorPath</key>
+	<string>/Users/YOUR_USERNAME/Library/Application Support/MediaLink/service-error.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/YOUR_USERNAME/Library/Application Support/MediaLink/service.log</string>
+	<key>ThrottleInterval</key>
+	<integer>10</integer>
+	<key>WorkingDirectory</key>
+	<string>/Users/YOUR_USERNAME/Applications/medialink</string>
+</dict>
+</plist>

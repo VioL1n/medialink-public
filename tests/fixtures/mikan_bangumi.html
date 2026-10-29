@@ -1,0 +1,851 @@
+<!DOCTYPE html><html>
+<body class="main">
+<div class="hidden-xs hidden-sm" id="sk-header">
+<div class="container" id="sk-top-nav">
+<a href="/" id="logo" style="width:205px;"><img id="mikan-pic" src="/images/mikan-pic.png"/><img src="/images/mikan-text.svg" style="height:30px;"/></a>
+<div id="nav-list">
+<ul class="list-inline nav-ul">
+<li class="">
+<div class="sk-col"><a href="/"><i class="fa fa-home fa-lg"></i>主页</a></div>
+</li>
+<li class="">
+<div class="sk-col"><a href="/Home/MyBangumi"><i class="fa fa-rss fa-lg"></i>订阅</a></div>
+</li>
+<li class="">
+<div class="sk-col"><a href="/Home/Classic"><i class="fa fa-slack fa-lg"></i>列表</a></div>
+</li>
+</ul>
+</div>
+<div class="search-form">
+<form action="/Home/Search" method="get">
+<div class="form-group has-feedback">
+<label class="sr-only" for="search">搜索</label>
+<input class="form-control input-sm" id="header-search" name="searchstr" placeholder="搜索" type="text"/>
+<span class="glyphicon glyphicon-search form-control-feedback"></span>
+</div>
+</form>
+</div>
+<section id="login">
+<div class="pull-right" id="user-login">
+<a class="text-right" href="/Account/Register">注册</a>     
+            <a class="text-right" data-placement="bottom bottom-right" data-target="#login-popover" data-toggle="popover-x" onclick="ToggleActive(this)" rel="popover">登录</a>
+<form action="/Account/Login?ReturnUrl=%2FHome%2FBangumi%2F4060" class="form-vertical" method="post">
+<input name="__RequestVerificationToken" type="hidden" value="TEST_CSRF_TOKEN"/></form> </div>
+
+</section>
+</div>
+<div class="ribbon">
+<span class="ribbon-color1"></span>
+<span class="ribbon-color2"></span>
+<span class="ribbon-color3"></span>
+<span class="ribbon-color4"></span>
+<span class="ribbon-color5"></span>
+<span class="ribbon-color6"></span>
+<span class="ribbon-color7"></span>
+</div>
+</div>
+<div class="m-home-nav hidden-lg hidden-md" id="sk-mobile-header">
+<div class="m-home-tool-left clickable" data-target="#modal-nav" data-toggle="modal">
+<i aria-hidden="true" class="fa fa-bars"></i>
+</div>
+<div class="m-home-tool-left"></div>
+<div style="text-align: center; height:100%;flex:1;">
+<a href="/" style="text-decoration:none">
+<img src="/images/mikan-pic.png" style="height: 3rem;margin-top: 0.5rem;"/>
+<img src="/images/mikan-text.png" style="height: 1.5rem;margin-top: 0.5rem;"/>
+</a>
+</div>
+<div class="m-home-tool-right clickable" data-target="#modal-login" data-toggle="modal">
+<i aria-hidden="true" class="fa fa-user" style="margin-right: 1rem;"></i>
+</div>
+<div class="m-home-tool-right clickable" onclick="ShowNavSearch()">
+<i aria-hidden="true" class="fa fa-search"></i>
+</div>
+</div>
+<div class="m-nav-search" style="width: 100%;">
+<div style="flex: 1;">
+<form action="/Home/Search" method="get">
+<div class="input-group">
+<span class="input-group-addon" id="sizing-addon1" style="border: none;background-color: white;">
+<i aria-hidden="true" class="fa fa-search"></i>
+</span>
+<input aria-describedby="sizing-addon1" class="form-control" name="searchstr" placeholder="搜索" style="border: none;font-size:16px;" type="text"/>
+</div>
+</form>
+</div>
+<div onclick="HideNavSearch()" style="width: 4rem;">
+<span style="font-size: 1.25rem;">取消</span>
+</div>
+</div>
+<div class="container hidden-sm hidden-xs" id="sk-container">
+<div class="pull-left leftbar-container">
+<img class="subscribed-badge" src="/images/subscribed-badge.svg" style="display:none;"/>
+<div class="bangumi-poster" style="background-image: url('/images/Bangumi/202610/f132283b.jpg?width=400&amp;height=560&amp;format=webp');"></div>
+<p class="bangumi-title">用【循环利息】强制收回借出的魔力 <a class="mikan-rss" data-original-title="RSS" data-placement="bottom" data-toggle="tooltip" href="/RSS/Bangumi?bangumiId=4060" target="_blank"><i class="fa fa-rss-square"></i></a></p>
+<p class="bangumi-info">放送日期：星期六</p>
+<p class="bangumi-info">放送开始：10/3/2026</p>
+<p class="bangumi-info">官方网站：<br/><a class="w-other-c" href="https://revo-anime.com/" target="_blank">https://revo-anime.com/</a></p>
+<p class="bangumi-info">Bangumi番组计划链接：<br/><a class="w-other-c" href="https://bgm.tv/subject/606716" target="_blank">https://bgm.tv/subject/606716</a></p>
+<div id="leftbar-nav-anchor"></div>
+<div class="leftbar-nav">
+<div class="header">字幕组列表</div>
+<ul class="list-unstyled">
+<li class="leftbar-item">
+<span>
+<a class="subgroup-name subgroup-615" data-anchor="#615">Kirara Fantasia</a>
+</span>
+<span class="date">
+                            10/16/2026
+                        </span>
+</li>
+<li class="leftbar-item">
+<span>
+<a class="subgroup-name subgroup-1256" data-anchor="#1256">Nix-Raws</a>
+</span>
+<span class="date">
+                            10/11/2026
+                        </span>
+</li>
+<li class="leftbar-item">
+<span>
+<a class="subgroup-name subgroup-583" data-anchor="#583">ANi</a>
+</span>
+<span class="date">
+                            10/11/2026
+                        </span>
+</li>
+<li class="leftbar-item">
+<span>
+<a class="subgroup-name subgroup-370" data-anchor="#370">LoliHouse</a>
+</span>
+<span class="date">
+                            10/5/2026
+                        </span>
+</li>
+</ul>
+<button class="btn logmod-submit js-subscribe_bangumi_page" data-bangumiid="4060" data-subtitlegroupid="">订阅番组</button>
+</div>
+</div>
+<div class="central-container">
+<div class="header2">
+<span class="header2-text">概况介绍</span>
+</div>
+<p class="header2-desc"> 这是创世神赐予的「天赋」会对一个人的人生带来巨大变化的世界――。居住在边境村庄、心地善良的少年连特，获得了能将自己的魔力「借给」同伴，极为稀有的辅助能力「魔藏库」。
+他与村里的儿时玩伴们组成了队伍「断空之剑」，怀抱着身为辅助者的使命，踏上冒险之旅。然而，始终很弱的连特却被视为累赘，最后甚至惨遭队伍无情「放逐」！
+连特心中燃起了强烈的愤怒与复仇之火，他的天赋也因此进化，导致真正的能力就此觉醒――
+那就是，能将自己长年借出的庞大魔力【强制收回】的技能。向背叛自己的「前伙伴」讨回魔力，并以此为养分持续成长。连特的「复仇」故事，现在正式揭开序幕！
+
+
+
+[简介原文]
+ここは、創世神から授かる「ギフト」によって人生が大きく左右される世界――。
+辺境の村に暮らす心優しい少年・レントは、自分の魔力を仲間に“貸し与える”ことができる極めて稀有なサポート能力《魔蔵庫》を授かる。
+村の幼馴染たちと共にパーティー『断空の剣』を結成し、サポート役としての使命を胸に冒険の旅へと踏み出していく。しかし、いつまでも弱いままのレントはお荷物と見なされ、無情にもパーティーから“追放”されてしまう！
+激しい怒りと復讐心が芽生えたレントのギフトは進化を遂げ、真の能力を開花させる――
+それは、貸し続けてきた膨大な魔力を【強制徴収】する スキルだった。
+裏切った“元仲間”たちから魔力を取り立て、それを糧に成長していくレントの“復讐”の物語が、今、始まる！ </p>
+<div class="header2">
+<span class="header2-text">字幕组列表</span>
+</div>
+<div style="margin-top: 10px; margin-bottom: 10px;">
+<div class="hidden-xs hidden-sm" style="width:100%; margin-right: auto; margin-left: auto;">
+<a href="https://equity.tmall.com/tm?agentId=030f9003a26d4361&amp;bc_fl_src=tmall_market_llb_1_2698459&amp;llbPlatform=_pube&amp;llbOsd=1&amp;di=__IDFA__&amp;dim=__IMEI__&amp;oaid=__OAID__&amp;caid=__CAID__&amp;sy=llb" onclick="ga('send', 'event', 'sswj_lg', 'clicked', 'ad');">
+<img src="/images/SSWJ/sswj9_lg.jpg" style="height: 100%; width: 100%; object-fit: contain"/>
+</a>
+</div>
+<div class="hidden-lg hidden-md" style="width:100%; margin-right: auto; margin-left: auto;">
+<a href="https://equity.tmall.com/tm?agentId=030f9003a26d4361&amp;bc_fl_src=tmall_market_llb_1_2698459&amp;llbPlatform=_pube&amp;llbOsd=1&amp;di=__IDFA__&amp;dim=__IMEI__&amp;oaid=__OAID__&amp;caid=__CAID__&amp;sy=llb" onclick="ga('send', 'event', 'sswj_sm', 'clicked', 'ad');">
+<img src="/images/SSWJ/sswj9_sm.jpg" style="height: 100%; width: 100%; object-fit: contain"/>
+</a>
+</div>
+</div>
+<div class="subgroup-scroll-top-615"></div>
+<div class="subgroup-text" id="615">
+<a href="/Home/PublishGroup/392" style="color: #3bc0c3;" target="_blank">Kirara Fantasia</a>
+<a class="mikan-rss" data-original-title="RSS" data-placement="bottom" data-toggle="tooltip" href="/RSS/Bangumi?bangumiId=4060&amp;subgroupid=615" target="_blank"><i class="fa fa-rss-square"></i></a>
+<span class="subscribed" style="display:none;">已订阅</span>
+<a class="pull-right subgroup-subscribe js-subscribe_bangumi_page" data-bangumiid="4060" data-placement="bottom" data-subtitlegroupid="615" data-target="#subscription-popover-4060-615" data-toggle="popover-x">订阅</a>
+
+</div>
+<div class="episode-table">
+<div class="copy-info-row">
+<button class="btn btn-default btn-xs js-copy-selected" disabled="" type="button">复制选中磁连</button>
+<span class="text-muted js-selected-count">已选 0 项</span>
+<span class="text-success js-copy-status" style="display:none;">已复制</span>
+</div>
+<table class="table table-striped tbl-border fadeIn">
+<thead>
+<tr>
+<th width="5%"><input aria-label="选择全部" class="js-select-all" type="checkbox"/></th>
+<th width="60%">番组名</th>
+<th width="8%">大小</th>
+<th width="17%">更新时间</th>
+<th width="5%">下载</th>
+<th width="5%">播放</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<input aria-label="选择此行" class="js-episode-select" data-magnet="magnet:?xt=urn:btih:ef3c231cef58561214d7e14c2d74eb3514197d22&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce" type="checkbox"/>
+</td>
+<td>
+<a class="magnet-link-wrap" href="/Home/Episode/ef3c231cef58561214d7e14c2d74eb3514197d22" target="_blank">[黒ネズミたち] 用【循环利息】强制收回借出的魔力 / Revo - 02 (ABEMA 1920x1080 AVC AAC MKV)</a>
+<a class="js-magnet magnet-link" data-clipboard-text="magnet:?xt=urn:btih:ef3c231cef58561214d7e14c2d74eb3514197d22&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce">[复制磁连]</a>
+</td>
+<td>686.2 MB</td>
+<td>2026/10/16 01:00</td>
+<td>
+<a href="/Download/20261016/ef3c231cef58561214d7e14c2d74eb3514197d22.torrent">
+<img src="/images/download_icon_blue.svg" style="margin-left: 2px;width: 20px;height:15px;"/>
+</a>
+</td>
+<td>
+<a href="https://keepshare.org/rclukaia/magnet%3A%3Fxt%3Durn%3Abtih%3Aef3c231cef58561214d7e14c2d74eb3514197d22" target="_blank">
+<i class="fa fa-play-circle" style="color: #47c1c5; margin-left: 4px; font-size: 18px;"></i>
+</a>
+</td>
+</tr>
+<tr>
+<td>
+<input aria-label="选择此行" class="js-episode-select" data-magnet="magnet:?xt=urn:btih:98dbe03b7f11147c26325415fc2d3b04f0f3faee&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce" type="checkbox"/>
+</td>
+<td>
+<a class="magnet-link-wrap" href="/Home/Episode/98dbe03b7f11147c26325415fc2d3b04f0f3faee" target="_blank">[黒ネズミたち] 用【循环利息】强制收回借出的魔力 / Revo - 02 (CR 1920x1080 AVC AAC MKV)</a>
+<a class="js-magnet magnet-link" data-clipboard-text="magnet:?xt=urn:btih:98dbe03b7f11147c26325415fc2d3b04f0f3faee&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce">[复制磁连]</a>
+</td>
+<td>1.1 GB</td>
+<td>2026/10/11 02:02</td>
+<td>
+<a href="/Download/20261011/98dbe03b7f11147c26325415fc2d3b04f0f3faee.torrent">
+<img src="/images/download_icon_blue.svg" style="margin-left: 2px;width: 20px;height:15px;"/>
+</a>
+</td>
+<td>
+<a href="https://keepshare.org/rclukaia/magnet%3A%3Fxt%3Durn%3Abtih%3A98dbe03b7f11147c26325415fc2d3b04f0f3faee" target="_blank">
+<i class="fa fa-play-circle" style="color: #47c1c5; margin-left: 4px; font-size: 18px;"></i>
+</a>
+</td>
+</tr>
+<tr>
+<td>
+<input aria-label="选择此行" class="js-episode-select" data-magnet="magnet:?xt=urn:btih:991f72ee081626c5e6c4eadaebc19a1ed87a2956&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce" type="checkbox"/>
+</td>
+<td>
+<a class="magnet-link-wrap" href="/Home/Episode/991f72ee081626c5e6c4eadaebc19a1ed87a2956" target="_blank">[黒ネズミたち] 用【循环利息】强制收回借出的魔力 / Revo - 02 (Baha 1920x1080 AVC AAC MP4)</a>
+<a class="js-magnet magnet-link" data-clipboard-text="magnet:?xt=urn:btih:991f72ee081626c5e6c4eadaebc19a1ed87a2956&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce">[复制磁连]</a>
+</td>
+<td>385.4 MB</td>
+<td>2026/10/11 02:01</td>
+<td>
+<a href="/Download/20261011/991f72ee081626c5e6c4eadaebc19a1ed87a2956.torrent">
+<img src="/images/download_icon_blue.svg" style="margin-left: 2px;width: 20px;height:15px;"/>
+</a>
+</td>
+<td>
+<a href="https://keepshare.org/rclukaia/magnet%3A%3Fxt%3Durn%3Abtih%3A991f72ee081626c5e6c4eadaebc19a1ed87a2956" target="_blank">
+<i class="fa fa-play-circle" style="color: #47c1c5; margin-left: 4px; font-size: 18px;"></i>
+</a>
+</td>
+</tr>
+
+
+
+
+
+</tbody>
+</table>
+</div> <div class="subgroup-scroll-end-615"></div>
+<div style="height:1px;"></div>
+<div class="subgroup-scroll-top-1256"></div>
+<div class="subgroup-text" id="1256">
+<a href="/Home/PublishGroup/1027" style="color: #3bc0c3;" target="_blank">Nix-Raws</a>
+<a class="mikan-rss" data-original-title="RSS" data-placement="bottom" data-toggle="tooltip" href="/RSS/Bangumi?bangumiId=4060&amp;subgroupid=1256" target="_blank"><i class="fa fa-rss-square"></i></a>
+<span class="subscribed" style="display:none;">已订阅</span>
+<a class="pull-right subgroup-subscribe js-subscribe_bangumi_page" data-bangumiid="4060" data-placement="bottom" data-subtitlegroupid="1256" data-target="#subscription-popover-4060-1256" data-toggle="popover-x">订阅</a>
+
+</div>
+<div class="episode-table">
+<div class="copy-info-row">
+<button class="btn btn-default btn-xs js-copy-selected" disabled="" type="button">复制选中磁连</button>
+<span class="text-muted js-selected-count">已选 0 项</span>
+<span class="text-success js-copy-status" style="display:none;">已复制</span>
+</div>
+<table class="table table-striped tbl-border fadeIn">
+<thead>
+<tr>
+<th width="5%"><input aria-label="选择全部" class="js-select-all" type="checkbox"/></th>
+<th width="60%">番组名</th>
+<th width="8%">大小</th>
+<th width="17%">更新时间</th>
+<th width="5%">下载</th>
+<th width="5%">播放</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<input aria-label="选择此行" class="js-episode-select" data-magnet="magnet:?xt=urn:btih:0463bb199915f34138c4deca077654645d445478&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce" type="checkbox"/>
+</td>
+<td>
+<a class="magnet-link-wrap" href="/Home/Episode/0463bb199915f34138c4deca077654645d445478" target="_blank">[Nix-Raws] 用【循环利息】强制收回借出的魔力 / Kashita Maryoku wa Ribo Barai de Kyousei Choushuu S01E02 [CR WEB-DL 1080p AVC AAC][简繁内封]</a>
+<a class="js-magnet magnet-link" data-clipboard-text="magnet:?xt=urn:btih:0463bb199915f34138c4deca077654645d445478&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce">[复制磁连]</a>
+</td>
+<td>1.1 GB</td>
+<td>2026/10/11 03:03</td>
+<td>
+<a href="/Download/20261011/0463bb199915f34138c4deca077654645d445478.torrent">
+<img src="/images/download_icon_blue.svg" style="margin-left: 2px;width: 20px;height:15px;"/>
+</a>
+</td>
+<td>
+<a href="https://keepshare.org/rclukaia/magnet%3A%3Fxt%3Durn%3Abtih%3A0463bb199915f34138c4deca077654645d445478" target="_blank">
+<i class="fa fa-play-circle" style="color: #47c1c5; margin-left: 4px; font-size: 18px;"></i>
+</a>
+</td>
+</tr>
+<tr>
+<td>
+<input aria-label="选择此行" class="js-episode-select" data-magnet="magnet:?xt=urn:btih:260de07a92992a5780b6bc9fdb8612f7764ca4f3&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce" type="checkbox"/>
+</td>
+<td>
+<a class="magnet-link-wrap" href="/Home/Episode/260de07a92992a5780b6bc9fdb8612f7764ca4f3" target="_blank">[Nix-Raws] 用【循环利息】强制收回借出的魔力 / Kashita Maryoku wa Ribo Barai de Kyousei Choushuu S01E01 [CR WEB-DL 1080p AVC AAC][简繁内封]</a>
+<a class="js-magnet magnet-link" data-clipboard-text="magnet:?xt=urn:btih:260de07a92992a5780b6bc9fdb8612f7764ca4f3&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce">[复制磁连]</a>
+</td>
+<td>1.3 GB</td>
+<td>2026/10/04 22:15</td>
+<td>
+<a href="/Download/20261004/260de07a92992a5780b6bc9fdb8612f7764ca4f3.torrent">
+<img src="/images/download_icon_blue.svg" style="margin-left: 2px;width: 20px;height:15px;"/>
+</a>
+</td>
+<td>
+<a href="https://keepshare.org/rclukaia/magnet%3A%3Fxt%3Durn%3Abtih%3A260de07a92992a5780b6bc9fdb8612f7764ca4f3" target="_blank">
+<i class="fa fa-play-circle" style="color: #47c1c5; margin-left: 4px; font-size: 18px;"></i>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div> <div class="subgroup-scroll-end-1256"></div>
+<div style="height:1px;"></div>
+<div class="subgroup-scroll-top-583"></div>
+<div class="subgroup-text" id="583">
+<a href="/Home/PublishGroup/359" style="color: #3bc0c3;" target="_blank">ANi</a>
+<a class="mikan-rss" data-original-title="RSS" data-placement="bottom" data-toggle="tooltip" href="/RSS/Bangumi?bangumiId=4060&amp;subgroupid=583" target="_blank"><i class="fa fa-rss-square"></i></a>
+<span class="subscribed" style="display:none;">已订阅</span>
+<a class="pull-right subgroup-subscribe js-subscribe_bangumi_page" data-bangumiid="4060" data-placement="bottom" data-subtitlegroupid="583" data-target="#subscription-popover-4060-583" data-toggle="popover-x">订阅</a>
+
+</div>
+<div class="episode-table">
+<div class="copy-info-row">
+<button class="btn btn-default btn-xs js-copy-selected" disabled="" type="button">复制选中磁连</button>
+<span class="text-muted js-selected-count">已选 0 项</span>
+<span class="text-success js-copy-status" style="display:none;">已复制</span>
+</div>
+<table class="table table-striped tbl-border fadeIn">
+<thead>
+<tr>
+<th width="5%"><input aria-label="选择全部" class="js-select-all" type="checkbox"/></th>
+<th width="60%">番组名</th>
+<th width="8%">大小</th>
+<th width="17%">更新时间</th>
+<th width="5%">下载</th>
+<th width="5%">播放</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<input aria-label="选择此行" class="js-episode-select" data-magnet="magnet:?xt=urn:btih:085a592e80f42d2e08bff1f0624f952dea14be33&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce" type="checkbox"/>
+</td>
+<td>
+<a class="magnet-link-wrap" href="/Home/Episode/085a592e80f42d2e08bff1f0624f952dea14be33" target="_blank">[ANi]  用【循环利息】强制收回借出的魔力 - 02 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]</a>
+<a class="js-magnet magnet-link" data-clipboard-text="magnet:?xt=urn:btih:085a592e80f42d2e08bff1f0624f952dea14be33&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce">[复制磁连]</a>
+</td>
+<td>385.4 MB</td>
+<td>2026/10/11 02:01</td>
+<td>
+<a href="/Download/20261011/085a592e80f42d2e08bff1f0624f952dea14be33.torrent">
+<img src="/images/download_icon_blue.svg" style="margin-left: 2px;width: 20px;height:15px;"/>
+</a>
+</td>
+<td>
+<a href="https://keepshare.org/rclukaia/magnet%3A%3Fxt%3Durn%3Abtih%3A085a592e80f42d2e08bff1f0624f952dea14be33" target="_blank">
+<i class="fa fa-play-circle" style="color: #47c1c5; margin-left: 4px; font-size: 18px;"></i>
+</a>
+</td>
+</tr>
+<tr>
+<td>
+<input aria-label="选择此行" class="js-episode-select" data-magnet="magnet:?xt=urn:btih:4722fec1477c3f0918b3f6da396828e614b6dbea&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce" type="checkbox"/>
+</td>
+<td>
+<a class="magnet-link-wrap" href="/Home/Episode/4722fec1477c3f0918b3f6da396828e614b6dbea" target="_blank">[ANi]  用【循环利息】强制收回借出的魔力 - 01 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]</a>
+<a class="js-magnet magnet-link" data-clipboard-text="magnet:?xt=urn:btih:4722fec1477c3f0918b3f6da396828e614b6dbea&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce">[复制磁连]</a>
+</td>
+<td>435.5 MB</td>
+<td>2026/10/04 02:00</td>
+<td>
+<a href="/Download/20261004/4722fec1477c3f0918b3f6da396828e614b6dbea.torrent">
+<img src="/images/download_icon_blue.svg" style="margin-left: 2px;width: 20px;height:15px;"/>
+</a>
+</td>
+<td>
+<a href="https://keepshare.org/rclukaia/magnet%3A%3Fxt%3Durn%3Abtih%3A4722fec1477c3f0918b3f6da396828e614b6dbea" target="_blank">
+<i class="fa fa-play-circle" style="color: #47c1c5; margin-left: 4px; font-size: 18px;"></i>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div> <div class="subgroup-scroll-end-583"></div>
+<div style="height:1px;"></div>
+<div class="subgroup-scroll-top-370"></div>
+<div class="subgroup-text" id="370">
+<a href="/Home/PublishGroup/223" style="color: #3bc0c3;" target="_blank">LoliHouse</a>
+<a class="mikan-rss" data-original-title="RSS" data-placement="bottom" data-toggle="tooltip" href="/RSS/Bangumi?bangumiId=4060&amp;subgroupid=370" target="_blank"><i class="fa fa-rss-square"></i></a>
+<span class="subscribed" style="display:none;">已订阅</span>
+<a class="pull-right subgroup-subscribe js-subscribe_bangumi_page" data-bangumiid="4060" data-placement="bottom" data-subtitlegroupid="370" data-target="#subscription-popover-4060-370" data-toggle="popover-x">订阅</a>
+
+</div>
+<div class="episode-table">
+<div class="copy-info-row">
+<button class="btn btn-default btn-xs js-copy-selected" disabled="" type="button">复制选中磁连</button>
+<span class="text-muted js-selected-count">已选 0 项</span>
+<span class="text-success js-copy-status" style="display:none;">已复制</span>
+</div>
+<table class="table table-striped tbl-border fadeIn">
+<thead>
+<tr>
+<th width="5%"><input aria-label="选择全部" class="js-select-all" type="checkbox"/></th>
+<th width="60%">番组名</th>
+<th width="8%">大小</th>
+<th width="17%">更新时间</th>
+<th width="5%">下载</th>
+<th width="5%">播放</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<input aria-label="选择此行" class="js-episode-select" data-magnet="magnet:?xt=urn:btih:e7fbb62785505fe0b8fab31dc8b5a7b3e761383b&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce" type="checkbox"/>
+</td>
+<td>
+<a class="magnet-link-wrap" href="/Home/Episode/e7fbb62785505fe0b8fab31dc8b5a7b3e761383b" target="_blank">[LoliHouse] 用【循环利息】强制收回借出的魔力 / Kashita Maryoku wa Revo Barai de Kyousei Choushuu - 01 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]</a>
+<a class="js-magnet magnet-link" data-clipboard-text="magnet:?xt=urn:btih:e7fbb62785505fe0b8fab31dc8b5a7b3e761383b&amp;tr=http%3a%2f%2ft.nyaatracker.com%2fannounce&amp;tr=http%3a%2f%2ftracker.kamigami.org%3a2710%2fannounce&amp;tr=http%3a%2f%2fshare.camoe.cn%3a8080%2fannounce&amp;tr=http%3a%2f%2fopentracker.acgnx.se%2fannounce&amp;tr=http%3a%2f%2fanidex.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&amp;tr=https%3a%2f%2ftr.bangumi.moe%3a9696%2fannounce&amp;tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&amp;tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&amp;tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce">[复制磁连]</a>
+</td>
+<td>560.9MB</td>
+<td>2026/10/05 02:45</td>
+<td>
+<a href="/Download/20261005/e7fbb62785505fe0b8fab31dc8b5a7b3e761383b.torrent">
+<img src="/images/download_icon_blue.svg" style="margin-left: 2px;width: 20px;height:15px;"/>
+</a>
+</td>
+<td>
+<a href="https://keepshare.org/rclukaia/magnet%3A%3Fxt%3Durn%3Abtih%3Ae7fbb62785505fe0b8fab31dc8b5a7b3e761383b" target="_blank">
+<i class="fa fa-play-circle" style="color: #47c1c5; margin-left: 4px; font-size: 18px;"></i>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div> <div class="subgroup-scroll-end-370"></div>
+<div style="height:1px;"></div>
+</div>
+<a class="cd-top cd-top-btn" href="#0">Top</a>
+</div>
+<div class="m-detail hidden-lg hidden-md" id="sk-mobile-container">
+<div id="bangumi-m-main">
+<div class="m-detail-title">
+<div style="position: relative;overflow: hidden;">
+<div class="m-detail-blur-bg blur" style="background-image:url(/images/Bangumi/202610/f132283b.jpg?width=400&amp;height=400&amp;format=webp)"></div>
+</div>
+<div class="content">
+<img alt="" src="/images/Bangumi/202610/f132283b.jpg?width=400&amp;height=400&amp;format=webp"/>
+<section>
+<p class="title" style="color:white;">用【循环利息】强制收回借出的魔力</p>
+<span>放送日期： 星期六</span>    
+                        <span>放送开始：10/3/2026</span>
+</section>
+</div>
+</div>
+<div class="m-detail-intro">
+<p class="title" style="color:#3bc0c3;">概况介绍</p>
+<div class="info">
+                    这是创世神赐予的「天赋」会对一个人的人生带来巨大变化的世界――。居住在边境村庄、心地善良的少年连特，获得了能将自己的魔力「借给」同伴，极为稀有的辅助能力「魔藏库」。
+他与村里的儿时玩伴们组成了队伍「断空之剑」，怀抱着身为辅助者的使命，踏上冒险之旅。然而，始终很弱的连特却被视为累赘，最后甚至惨遭队伍无情「放逐」！
+连特心中燃起了强烈的愤怒与复仇之火，他的天赋也因此进化，导致真正的能力就此觉醒――
+那就是，能将自己长年借出的庞大魔力【强制收回】的技能。向背叛自己的「前伙伴」讨回魔力，并以此为养分持续成长。连特的「复仇」故事，现在正式揭开序幕！
+
+
+
+[简介原文]
+ここは、創世神から授かる「ギフト」によって人生が大きく左右される世界――。
+辺境の村に暮らす心優しい少年・レントは、自分の魔力を仲間に“貸し与える”ことができる極めて稀有なサポート能力《魔蔵庫》を授かる。
+村の幼馴染たちと共にパーティー『断空の剣』を結成し、サポート役としての使命を胸に冒険の旅へと踏み出していく。しかし、いつまでも弱いままのレントはお荷物と見なされ、無情にもパーティーから“追放”されてしまう！
+激しい怒りと復讐心が芽生えたレントのギフトは進化を遂げ、真の能力を開花させる――
+それは、貸し続けてきた膨大な魔力を【強制徴収】する スキルだった。
+裏切った“元仲間”たちから魔力を取り立て、それを糧に成長していくレントの“復讐”の物語が、今、始まる！
+                </div>
+</div>
+<div style="margin-top: 10px; margin-bottom: 10px;">
+<div class="hidden-xs hidden-sm" style="width:100%; margin-right: auto; margin-left: auto;">
+<a href="https://equity.tmall.com/tm?agentId=030f9003a26d4361&amp;bc_fl_src=tmall_market_llb_1_2698459&amp;llbPlatform=_pube&amp;llbOsd=1&amp;di=__IDFA__&amp;dim=__IMEI__&amp;oaid=__OAID__&amp;caid=__CAID__&amp;sy=llb" onclick="ga('send', 'event', 'sswj_lg', 'clicked', 'ad');">
+<img src="/images/SSWJ/sswj7_lg.jpg" style="height: 100%; width: 100%; object-fit: contain"/>
+</a>
+</div>
+<div class="hidden-lg hidden-md" style="width:100%; margin-right: auto; margin-left: auto;">
+<a href="https://equity.tmall.com/tm?agentId=030f9003a26d4361&amp;bc_fl_src=tmall_market_llb_1_2698459&amp;llbPlatform=_pube&amp;llbOsd=1&amp;di=__IDFA__&amp;dim=__IMEI__&amp;oaid=__OAID__&amp;caid=__CAID__&amp;sy=llb" onclick="ga('send', 'event', 'sswj_sm', 'clicked', 'ad');">
+<img src="/images/SSWJ/sswj7_sm.jpg" style="height: 100%; width: 100%; object-fit: contain"/>
+</a>
+</div>
+</div>
+<div class="m-detail-list">
+<div class="header">
+<div style="flex: 1;padding-left: 1.5rem;">
+<span class="title">字幕组列表</span>
+</div>
+<div class="clickable" onclick="SortItems('subgroup-list'); InitMobileSubscribeBangumiPage();" style="width: 5rem;">
+                    排序  <i aria-hidden="true" class="fa fa-sort icon"></i>
+</div>
+<div class="clickable" onclick="ShowSubscribedOnly('subgroup-list')" style="width: 5rem;">
+                    筛选  <i aria-hidden="true" class="fa fa-filter icon"></i>
+</div>
+</div>
+<div class="m-detail-list-content js-sort-items-list" id="subgroup-list">
+<div class="item js-sort-item js-m-subgroup-item" data-index="0" id="m615">
+<div class="left clickable" onclick="BangumiSubgroupShowEpisode('bangumi-m-615')">
+<img alt="" class="m-detail-avatar" src="/images/Bangumi/202610/f132283b.jpg?width=400&amp;height=400&amp;format=webp"/>
+</div>
+<div class="right clickable" onclick="BangumiSubgroupShowEpisode('bangumi-m-615')" style="width:3.5rem;text-overflow:ellipsis;overflow: hidden;white-space:nowrap;">
+<span class="title" style="font-size: 1.35rem;">Kirara Fantasia</span><br/>
+<div style="margin-top:  0.75rem;">
+<span class="remark">更新: 10/16/2026</span>
+</div>
+</div>
+<div class="m-like">
+<span><i aria-hidden="true" class="fa fa-heart-o clickable js-m-subscribe_bangumi_page" data-bangumiid="4060" data-subtitlegroupid="615"></i></span>
+</div>
+</div>
+<div class="item js-sort-item js-m-subgroup-item" data-index="1" id="m1256">
+<div class="left clickable" onclick="BangumiSubgroupShowEpisode('bangumi-m-1256')">
+<img alt="" class="m-detail-avatar" src="/images/Bangumi/202610/f132283b.jpg?width=400&amp;height=400&amp;format=webp"/>
+</div>
+<div class="right clickable" onclick="BangumiSubgroupShowEpisode('bangumi-m-1256')" style="width:3.5rem;text-overflow:ellipsis;overflow: hidden;white-space:nowrap;">
+<span class="title" style="font-size: 1.35rem;">Nix-Raws</span><br/>
+<div style="margin-top:  0.75rem;">
+<span class="remark">更新: 10/11/2026</span>
+</div>
+</div>
+<div class="m-like">
+<span><i aria-hidden="true" class="fa fa-heart-o clickable js-m-subscribe_bangumi_page" data-bangumiid="4060" data-subtitlegroupid="1256"></i></span>
+</div>
+</div>
+<div class="item js-sort-item js-m-subgroup-item" data-index="2" id="m583">
+<div class="left clickable" onclick="BangumiSubgroupShowEpisode('bangumi-m-583')">
+<img alt="" class="m-detail-avatar" src="/images/Bangumi/202610/f132283b.jpg?width=400&amp;height=400&amp;format=webp"/>
+</div>
+<div class="right clickable" onclick="BangumiSubgroupShowEpisode('bangumi-m-583')" style="width:3.5rem;text-overflow:ellipsis;overflow: hidden;white-space:nowrap;">
+<span class="title" style="font-size: 1.35rem;">ANi</span><br/>
+<div style="margin-top:  0.75rem;">
+<span class="remark">更新: 10/11/2026</span>
+</div>
+</div>
+<div class="m-like">
+<span><i aria-hidden="true" class="fa fa-heart-o clickable js-m-subscribe_bangumi_page" data-bangumiid="4060" data-subtitlegroupid="583"></i></span>
+</div>
+</div>
+<div class="item js-sort-item js-m-subgroup-item" data-index="3" id="m370">
+<div class="left clickable" onclick="BangumiSubgroupShowEpisode('bangumi-m-370')">
+<img alt="" class="m-detail-avatar" src="/images/Bangumi/202610/f132283b.jpg?width=400&amp;height=400&amp;format=webp"/>
+</div>
+<div class="right clickable" onclick="BangumiSubgroupShowEpisode('bangumi-m-370')" style="width:3.5rem;text-overflow:ellipsis;overflow: hidden;white-space:nowrap;">
+<span class="title" style="font-size: 1.35rem;">LoliHouse</span><br/>
+<div style="margin-top:  0.75rem;">
+<span class="remark">更新: 10/5/2026</span>
+</div>
+</div>
+<div class="m-like">
+<span><i aria-hidden="true" class="fa fa-heart-o clickable js-m-subscribe_bangumi_page" data-bangumiid="4060" data-subtitlegroupid="370"></i></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="m-bangumi-list-content" id="bangumi-m-615" style="display:none">
+<div class="m-bangumi-header1 item">
+<div class="left">
+<i aria-hidden="true" class="fa fa-angle-left fa-2x clickable" data-subtitlegroupid="615" onclick="BangumiSubgroupHideEpisode(this)" style="color:#888"></i>
+<img alt="" class="m-detail-avatar" src="/images/Bangumi/202610/f132283b.jpg?width=400&amp;height=400&amp;format=webp" style="left:4.5rem;"/>
+</div>
+<div class="right" style="flex:1;">
+<a class="title" href="/Home/PublishGroup/392" style="color:#222; text-decoration:none;">Kirara Fantasia</a>
+<br/>
+<div>
+<span class="remark">更新: 2026/10/16</span>
+</div>
+</div>
+<div class="m-like" style="border-bottom:none;">
+<span><i aria-hidden="true" class="fa fa-heart-o clickable js-m-subscribe_bangumi_page" data-bangumiid="4060" data-subtitlegroupid="615"></i></span>
+</div>
+</div>
+<div class="m-bangumi-header2">
+<div class="left">
+                用【循环利息】强制收回借出的魔力
+            </div>
+<div class="right clickable" onclick="SortItems('bangumi-episode-subgroup-615');">
+<div>排序</div>
+<div class="icon">
+<i aria-hidden="true" class="fa fa-sort"></i>
+</div>
+</div>
+</div>
+<div class="m-bangumi-content" id="bangumi-episode-subgroup-615">
+<div class="m-bangumi-item js-sort-item" data-index="0">
+<div class="left">
+<div class="text"><a href="/Home/Episode/ef3c231cef58561214d7e14c2d74eb3514197d22" style="color:inherit;">[黒ネズミたち] 用【循环利息】强制收回借出的魔力 / Revo - 02 (ABEMA 1920x1080 AVC AAC MKV)</a></div>
+<div class="date">10/15/2026 5:00 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261016/ef3c231cef58561214d7e14c2d74eb3514197d22.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+<div class="m-bangumi-item js-sort-item" data-index="1">
+<div class="left">
+<div class="text"><a href="/Home/Episode/98dbe03b7f11147c26325415fc2d3b04f0f3faee" style="color:inherit;">[黒ネズミたち] 用【循环利息】强制收回借出的魔力 / Revo - 02 (CR 1920x1080 AVC AAC MKV)</a></div>
+<div class="date">10/10/2026 6:02 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261011/98dbe03b7f11147c26325415fc2d3b04f0f3faee.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+<div class="m-bangumi-item js-sort-item" data-index="2">
+<div class="left">
+<div class="text"><a href="/Home/Episode/991f72ee081626c5e6c4eadaebc19a1ed87a2956" style="color:inherit;">[黒ネズミたち] 用【循环利息】强制收回借出的魔力 / Revo - 02 (Baha 1920x1080 AVC AAC MP4)</a></div>
+<div class="date">10/10/2026 6:01 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261011/991f72ee081626c5e6c4eadaebc19a1ed87a2956.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+<div class="m-bangumi-item js-sort-item" data-index="3">
+<div class="left">
+<div class="text"><a href="/Home/Episode/f606d798c2108b578d3386e7c713fc7224c9f045" style="color:inherit;">[黒ネズミたち] 用【循环利息】强制收回借出的魔力 / Revo - 02 (B-Global 1920x1080 HEVC AAC MKV)</a></div>
+<div class="date">10/10/2026 6:00 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261011/f606d798c2108b578d3386e7c713fc7224c9f045.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+<div class="m-bangumi-item js-sort-item" data-index="4">
+<div class="left">
+<div class="text"><a href="/Home/Episode/05c29728bbcebdf9850c477744faabb6858681a0" style="color:inherit;">[黒ネズミたち] 用【循环利息】强制收回借出的魔力 / Revo - 01 (ABEMA 1920x1080 AVC AAC MKV)</a></div>
+<div class="date">10/8/2026 5:00 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261009/05c29728bbcebdf9850c477744faabb6858681a0.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+<div class="m-bangumi-item js-sort-item" data-index="5">
+<div class="left">
+<div class="text"><a href="/Home/Episode/78cd56a7697102e64519652b36d445bd14f22f65" style="color:inherit;">[黒ネズミたち] 用【循环利息】强制收回借出的魔力 / Revo - 01 (CR 1920x1080 AVC AAC MKV)</a></div>
+<div class="date">10/3/2026 6:03 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261004/78cd56a7697102e64519652b36d445bd14f22f65.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+<div class="m-bangumi-item js-sort-item" data-index="6">
+<div class="left">
+<div class="text"><a href="/Home/Episode/c77734916a6b49ac01462645248abcde4673ff41" style="color:inherit;">[黒ネズミたち] 用【循环利息】强制收回借出的魔力 / Revo - 01 (Baha 1920x1080 AVC AAC MP4)</a></div>
+<div class="date">10/3/2026 6:00 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261004/c77734916a6b49ac01462645248abcde4673ff41.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+<div class="m-bangumi-item js-sort-item" data-index="7">
+<div class="left">
+<div class="text"><a href="/Home/Episode/a8b576a763e3eaa0ae74f0c7e4677c39c8fc6961" style="color:inherit;">[黒ネズミたち] 用【循环利息】强制收回借出的魔力 / Revo - 01 (B-Global 1920x1080 HEVC AAC MKV)</a></div>
+<div class="date">10/3/2026 6:00 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261004/a8b576a763e3eaa0ae74f0c7e4677c39c8fc6961.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="m-bangumi-list-content" id="bangumi-m-1256" style="display:none">
+<div class="m-bangumi-header1 item">
+<div class="left">
+<i aria-hidden="true" class="fa fa-angle-left fa-2x clickable" data-subtitlegroupid="1256" onclick="BangumiSubgroupHideEpisode(this)" style="color:#888"></i>
+<img alt="" class="m-detail-avatar" src="/images/Bangumi/202610/f132283b.jpg?width=400&amp;height=400&amp;format=webp" style="left:4.5rem;"/>
+</div>
+<div class="right" style="flex:1;">
+<a class="title" href="/Home/PublishGroup/1027" style="color:#222; text-decoration:none;">Nix-Raws</a>
+<br/>
+<div>
+<span class="remark">更新: 2026/10/11</span>
+</div>
+</div>
+<div class="m-like" style="border-bottom:none;">
+<span><i aria-hidden="true" class="fa fa-heart-o clickable js-m-subscribe_bangumi_page" data-bangumiid="4060" data-subtitlegroupid="1256"></i></span>
+</div>
+</div>
+<div class="m-bangumi-header2">
+<div class="left">
+                用【循环利息】强制收回借出的魔力
+            </div>
+<div class="right clickable" onclick="SortItems('bangumi-episode-subgroup-1256');">
+<div>排序</div>
+<div class="icon">
+<i aria-hidden="true" class="fa fa-sort"></i>
+</div>
+</div>
+</div>
+<div class="m-bangumi-content" id="bangumi-episode-subgroup-1256">
+<div class="m-bangumi-item js-sort-item" data-index="0">
+<div class="left">
+<div class="text"><a href="/Home/Episode/0463bb199915f34138c4deca077654645d445478" style="color:inherit;">[Nix-Raws] 用【循环利息】强制收回借出的魔力 / Kashita Maryoku wa Ribo Barai de Kyousei Choushuu S01E02 [CR WEB-DL 1080p AVC AAC][简繁内封]</a></div>
+<div class="date">10/10/2026 7:03 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261011/0463bb199915f34138c4deca077654645d445478.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+<div class="m-bangumi-item js-sort-item" data-index="1">
+<div class="left">
+<div class="text"><a href="/Home/Episode/260de07a92992a5780b6bc9fdb8612f7764ca4f3" style="color:inherit;">[Nix-Raws] 用【循环利息】强制收回借出的魔力 / Kashita Maryoku wa Ribo Barai de Kyousei Choushuu S01E01 [CR WEB-DL 1080p AVC AAC][简繁内封]</a></div>
+<div class="date">10/4/2026 2:15 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261004/260de07a92992a5780b6bc9fdb8612f7764ca4f3.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="m-bangumi-list-content" id="bangumi-m-583" style="display:none">
+<div class="m-bangumi-header1 item">
+<div class="left">
+<i aria-hidden="true" class="fa fa-angle-left fa-2x clickable" data-subtitlegroupid="583" onclick="BangumiSubgroupHideEpisode(this)" style="color:#888"></i>
+<img alt="" class="m-detail-avatar" src="/images/Bangumi/202610/f132283b.jpg?width=400&amp;height=400&amp;format=webp" style="left:4.5rem;"/>
+</div>
+<div class="right" style="flex:1;">
+<a class="title" href="/Home/PublishGroup/359" style="color:#222; text-decoration:none;">ANi</a>
+<br/>
+<div>
+<span class="remark">更新: 2026/10/11</span>
+</div>
+</div>
+<div class="m-like" style="border-bottom:none;">
+<span><i aria-hidden="true" class="fa fa-heart-o clickable js-m-subscribe_bangumi_page" data-bangumiid="4060" data-subtitlegroupid="583"></i></span>
+</div>
+</div>
+<div class="m-bangumi-header2">
+<div class="left">
+                用【循环利息】强制收回借出的魔力
+            </div>
+<div class="right clickable" onclick="SortItems('bangumi-episode-subgroup-583');">
+<div>排序</div>
+<div class="icon">
+<i aria-hidden="true" class="fa fa-sort"></i>
+</div>
+</div>
+</div>
+<div class="m-bangumi-content" id="bangumi-episode-subgroup-583">
+<div class="m-bangumi-item js-sort-item" data-index="0">
+<div class="left">
+<div class="text"><a href="/Home/Episode/085a592e80f42d2e08bff1f0624f952dea14be33" style="color:inherit;">[ANi]  用【循环利息】强制收回借出的魔力 - 02 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]</a></div>
+<div class="date">10/10/2026 6:01 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261011/085a592e80f42d2e08bff1f0624f952dea14be33.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+<div class="m-bangumi-item js-sort-item" data-index="1">
+<div class="left">
+<div class="text"><a href="/Home/Episode/4722fec1477c3f0918b3f6da396828e614b6dbea" style="color:inherit;">[ANi]  用【循环利息】强制收回借出的魔力 - 01 [1080P][Baha][WEB-DL][AAC AVC][CHT][MP4]</a></div>
+<div class="date">10/3/2026 6:00 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261004/4722fec1477c3f0918b3f6da396828e614b6dbea.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="m-bangumi-list-content" id="bangumi-m-370" style="display:none">
+<div class="m-bangumi-header1 item">
+<div class="left">
+<i aria-hidden="true" class="fa fa-angle-left fa-2x clickable" data-subtitlegroupid="370" onclick="BangumiSubgroupHideEpisode(this)" style="color:#888"></i>
+<img alt="" class="m-detail-avatar" src="/images/Bangumi/202610/f132283b.jpg?width=400&amp;height=400&amp;format=webp" style="left:4.5rem;"/>
+</div>
+<div class="right" style="flex:1;">
+<a class="title" href="/Home/PublishGroup/223" style="color:#222; text-decoration:none;">LoliHouse</a>
+<br/>
+<div>
+<span class="remark">更新: 2026/10/05</span>
+</div>
+</div>
+<div class="m-like" style="border-bottom:none;">
+<span><i aria-hidden="true" class="fa fa-heart-o clickable js-m-subscribe_bangumi_page" data-bangumiid="4060" data-subtitlegroupid="370"></i></span>
+</div>
+</div>
+<div class="m-bangumi-header2">
+<div class="left">
+                用【循环利息】强制收回借出的魔力
+            </div>
+<div class="right clickable" onclick="SortItems('bangumi-episode-subgroup-370');">
+<div>排序</div>
+<div class="icon">
+<i aria-hidden="true" class="fa fa-sort"></i>
+</div>
+</div>
+</div>
+<div class="m-bangumi-content" id="bangumi-episode-subgroup-370">
+<div class="m-bangumi-item js-sort-item" data-index="0">
+<div class="left">
+<div class="text"><a href="/Home/Episode/e7fbb62785505fe0b8fab31dc8b5a7b3e761383b" style="color:inherit;">[LoliHouse] 用【循环利息】强制收回借出的魔力 / Kashita Maryoku wa Revo Barai de Kyousei Choushuu - 01 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]</a></div>
+<div class="date">10/4/2026 6:45 PM 发布</div>
+</div>
+<div class="right">
+<a href="/Download/20261005/e7fbb62785505fe0b8fab31dc8b5a7b3e761383b.torrent">
+<img class="icon" src="/images/download_icon_black.svg"/>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+name: medialink
+
+services:
+  openlist:
+    image: medialink-openlist:local
+    build:
+      context: .
+      target: openlist
+      args:
+        OPENLIST_IMAGE: ${OPENLIST_IMAGE:-openlistteam/openlist:v4.2.6}
+    user: "1001:1001"
+    init: true
+    restart: unless-stopped
+    environment:
+      TZ: ${TZ:-Etc/UTC}
+      UMASK: "007"
+    ports:
+      - "${OPENLIST_BIND_IP:-127.0.0.1}:${OPENLIST_PORT:-5244}:5244"
+    volumes:
+      - openlist-data:/opt/openlist/data
+      - strm-data:/opt/openlist/strm
+
+  emby:
+    image: ${EMBY_IMAGE:-emby/embyserver:latest}
+    init: true
+    restart: unless-stopped
+    depends_on:
+      openlist:
+        condition: service_started
+    environment:
+      TZ: ${TZ:-Etc/UTC}
+      UID: "1001"
+      GID: "1001"
+      GIDLIST: "1001"
+    ports:
+      - "${EMBY_BIND_IP:-127.0.0.1}:${EMBY_PORT:-8096}:8096"
+    volumes:
+      - emby-data:/config
+      - strm-data:/mnt/strm:ro
+
+  medialink:
+    image: medialink:local
+    build:
+      context: .
+      target: medialink
+      args:
+        NODE_IMAGE: ${NODE_IMAGE:-node:24-bookworm-slim}
+        PYTHON_IMAGE: ${PYTHON_IMAGE:-python:3.12-slim-bookworm}
+        UV_IMAGE: ${UV_IMAGE:-ghcr.io/astral-sh/uv:0.12.13}
+    init: true
+    restart: unless-stopped
+    depends_on:
+      openlist:
+        condition: service_started
+      emby:
+        condition: service_started
+    environment:
+      TZ: ${TZ:-Etc/UTC}
+      MEDIALINK_DATA: /data
+      MEDIALINK_VAULT_BACKEND: file
+      MEDIALINK_VAULT_DIR: /data/vault
+      MEDIALINK_SETUP_MODE: cli
+      MEDIALINK_ENABLED_SEARCH_SOURCES: knaben,limetorrents,nyaa,telegram
+      MEDIALINK_OPENLIST_URL: http://openlist:5244
+      MEDIALINK_OPENLIST_DB: /openlist-data/data.db
+      MEDIALINK_EMBY_URL: http://emby:8096
+      MEDIALINK_MEDIA_ROOT: /115/infuse
+      MEDIALINK_STAGING_ROOT: /115/MediaLinkStaging
+      MEDIALINK_STRM_ROOT: /115Strm/infuse
+      MEDIALINK_STRM_LOCAL: /strm
+    ports:
+      - "${MEDIALINK_BIND_IP:-127.0.0.1}:${MEDIALINK_PORT:-8766}:8766"
+    volumes:
+      - medialink-data:/data
+      - openlist-data:/openlist-data:ro
+      - strm-data:/strm:ro
+    ulimits:
+      nofile:
+        soft: 8192
+        hard: 8192
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  medialink-data:
+  openlist-data:
+  strm-data:
+  emby-data:
